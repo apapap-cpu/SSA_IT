@@ -97,6 +97,11 @@ def denoise(ori1, ori2, cross1, cross2, uncross1, uncross2, out1, out2, iter):
     get_oabac(B2, 'Img2')
 
 if __name__ =='__main__':
+    directories = ['./caseandresult', './tmp_mat', './tmp_img', './tmp_res']
+    for directory in directories:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+            
     parser = argparse.ArgumentParser(description='Denoise images.')
     
     parser.add_argument('--ori', required=True, nargs=2, help='Paths to the two original images (ori_img1, ori_img2).')
