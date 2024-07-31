@@ -1,20 +1,18 @@
 # compute the psnr 
-# 计算两个图像的峰值信噪比（衡量图像压缩的效果）
 import numpy as np
 import math
 
 def psnr(image1,image2):
-    # 通道：颜色分量
-    [m,n,k] = image1.shape # 高度，宽度，通道数
+    [m,n,k] = image1.shape
     gg =0
     for kk in range(k):
-        mse =np.square(image1[:,:,kk]-image2[:,:,kk]).sum()/(m*n) # 对每个颜色通道计算两个图像的均方误差
+        mse =np.square(image1[:,:,kk]-image2[:,:,kk]).sum()/(m*n)
         gg = gg + 10*math.log10(255**2/mse)
     
-    gg = gg/k # 所有通道的平均psnr
+    gg = gg/k 
     return gg
 
-if __name__ == '__main__': # 如果直接运行模块，随机生成两个小图像并计算psnr
+if __name__ == '__main__':
    a = np.random.randint(0,5,size = [2,3,2])
    b = np.random.randint(0,5,size = [2,3,2])
    print(a[:,:,0])
