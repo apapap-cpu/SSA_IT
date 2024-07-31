@@ -2,12 +2,11 @@
 # recovery the size 
 import numpy as np
 from parm import Para as P
-def t2b(X,P): # 压缩
-    # X：原始数据
+def t2b(X,P): 
     patsize = P.patsize
     step = P.step
     sz = np.shape(X)
-    # 能从原始数组x中抽取的块的总数量
+
     TotalpatNum =int((np.floor((sz[0]-patsize)/step)+1)*(np.floor((sz[1]-patsize)/step)+1)*(np.floor((sz[2]-patsize)/step)+1))
     Z = np.zeros([patsize,patsize,patsize,TotalpatNum])
     for i in range(patsize):
@@ -16,13 +15,11 @@ def t2b(X,P): # 压缩
                 tempPatch = X[i:sz[0]-patsize+i+1,j:sz[1]-patsize+j+1,k:sz[2]-patsize+k+1][::step,::step,::step]
                 Z[i,j,k,:] =np.reshape(tempPatch,[1,TotalpatNum],order = 'F')
 
-    # Y包含所有重塑并重新排序后的块
     Y = np.transpose(np.reshape(Z,[patsize*patsize,patsize,TotalpatNum],order = 'F'),[0,2,1])
     return Y
 
    
-def b2t(lu,P,size_X): # 还原
-    # lu：经t2b处理过的块数据
+def b2t(lu,P,size_X):
     patsize = P.patsize
     step = P.step
     TempR = int(np.floor((size_X[0]-patsize)/step))+1
