@@ -5,7 +5,7 @@ from tprod import *
 import math
 
 
-def t2m(A): # 将三维张量A转换成二维矩阵Ac
+def t2m(A): 
     sz_A = A.shape
     dim = np.zeros((2))
     dim[0] = sz_A[0]*sz_A[2]
@@ -21,11 +21,11 @@ def t2m(A): # 将三维张量A转换成二维矩阵Ac
 
 def tsta(*args):
     if len(args) == 3:
-        Xc = args[0] # 输入张量
-        P = args[1] # 参数类
-        D0 = args[2] # 初始字典
+        Xc = args[0] 
+        P = args[1] 
+        D0 = args[2] 
         size_Xc = Xc.shape
-        B0 = np.zeros((P.r,size_Xc[1],size_Xc[2])) # 初始解
+        B0 = np.zeros((P.r,size_Xc[1],size_Xc[2])) 
     else :
         Xc = args[0]
         P = args[1]
