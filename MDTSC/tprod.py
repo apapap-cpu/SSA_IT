@@ -9,9 +9,9 @@ import numpy as np
 def tensor_prod(A,ch1,B,ch2):
     sz_A = np.shape(A)
     sz_B = np.shape(B)
-    sz = np.zeros(3)  #result
+    sz = np.zeros(3)
     sz[2] = sz_B[2]
-    if ch1 == 't': # 需要转置
+    if ch1 == 't':
         sz[0] = sz_A[1]
     else :
         sz[0] = sz_A[0]
@@ -25,7 +25,7 @@ def tensor_prod(A,ch1,B,ch2):
     sz= sz.astype(np.int32)
 
     chat = np.zeros(sz,dtype = complex)
-    ahat = np.fft.fft(A,axis = -1) # 使用FFT将AB转换到频域
+    ahat = np.fft.fft(A,axis = -1)
     bhat = np.fft.fft(B,axis = -1)
     if ch1 == 't' and ch2 == 't':
         for k in range(sz[2]):
