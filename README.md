@@ -1,6 +1,6 @@
 # SSA_IT
 # MDTSC
-The code in the folder 'MDTSC' is based on related work to compress images.
+The code in the folder 'MDTSC' is based on related work to compress images.<br>
 Working:
     python start.py --input <input_dir> --ori <original_image_dir> --output <output_dir>
     Notice that input_dir is the path of file in '.mat' format of the image; original_image_dir is the path of file in '.png' or '.jpg' format of the image and output_dir is the directory you would like to save the result.
