@@ -59,12 +59,12 @@ def denoise(ori1, ori2, cross1, cross2, uncross1, uncross2, out1, out2, iter):
     time3 = (end3 - start3).seconds 
 
     start4 = datetime.datetime.now()
-    concatenate_2images(img1, img2, out1) # Please note the sequence of two images here, present situaion is cross1 on the left and uncross1 on the right.
+    concatenate_2images(img1, img2, out1) # Please note the sequence of two images here, current situaion is cross1 on the left and uncross1 on the right.
     end4 = datetime.datetime.now()
     time4 = (end4 - start4).seconds
 
     start5 = datetime.datetime.now()
-    concatenate_2images(img4, img3, out2) # Please note the sequence of two images here, present situation is cross2 on the right and uncross2 on the left.
+    concatenate_2images(img4, img3, out2) # Please note the sequence of two images here, current situation is cross2 on the right and uncross2 on the left.
     end5 = datetime.datetime.now()
     time5 = (end5 - start5).seconds
     
