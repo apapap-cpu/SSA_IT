@@ -40,7 +40,7 @@ def tsta(*args):
     L0 = np.linalg.norm(D0c, ord=2)
     D0tX = tensor_prod(D0,'t',Xc,'a')
     C1 = B0
-    t1=1;
+    t1=1
     for iter in range(1,maxiter+1):
         L1 = eta**iter*L0
         gradC1 = tensor_prod(D0tD0,'t',C1,'a') - D0tX
