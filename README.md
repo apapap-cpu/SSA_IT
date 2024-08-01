@@ -15,6 +15,9 @@ Working:<br>
     A possible input is like:(if you put the input images in folder 'Split_img')<br>
         python split.py --input1 'img1.png' --input2 'img2.png' --output1 'res1.png' --output2 'res2.png'
 
+# Sample
+Images in the folder 'Sample' are an example of the input images used by 'Overlap'. As is shown, images are split into two sections: cross(overlapping) and uncross(non-overlapping).
+
 # Overlap
 The code in the folder 'Overlap' is designed to deal with the overlapping and non-overlapping sections of an image respectively and concatenate them together to reconstruct the image. <br>
 Working:<br>
